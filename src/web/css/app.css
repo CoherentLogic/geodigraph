@@ -14,3 +14,27 @@ html, body, #root {
     width: 100%;
     height: 100%;
 }
+
+#top-bar {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    right: 0;
+    height: 30px;
+    opacity: 0.6;
+    background-color: #999999;
+    border-radius: 2px;
+    border: 1px solid #CCCCCC;
+    width: 600px;
+    margin: 0 auto;
+    z-index: 2;
+}
+
+.geodigraph-button {
+    top: 65px;
+    left: .5em;
+}
+
+.ol-touch .geodigraph-button {
+    top: 80px;
+}

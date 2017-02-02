@@ -1,10 +1,11 @@
 {
-    "map": {
-	"defaults": {
-	    "latitude": 32.780239,
-	    "longitude": -107.282308,
-	    "zoom": 10
-	}
+    "defaults": {
+	"lat": 32.780239,
+	"lon": -107.282308,
+	"zoom": 18,
+	"minZoom": 16,
+	"maxZoom": 25,
+	"target": "root"
     }
 }
 	    

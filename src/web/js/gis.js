@@ -5,51 +5,81 @@
  * 
  * Author: John P. Willis <jpw@coherent-logic.com>
  *
- * app.js: main gis object
+ * gis.js:  mapping code
  *
  */
 
-var geodigraph = {
-    gis: {
+function __giMap(tagOpts, vectorLayers, rasterLayers)
+{
+    this.opts = tagOpts || {};
+    self = this;
 
-	Map: function(options) {
-	    var self = this;
+    this.plugins = [];
+    this.rasterLayers = [];
+    this.vectorLayers = [];
 
-	    self.config = options;
-	    
-	    self.mainMap = new ol.Map({
-		target: 'root',
-		layers: [
-		    new ol.layer.Tile({
-			source: new ol.source.OSM()
-		    })
-		],
-		view: new ol.View({
-		    center: ol.proj.fromLonLat([self.config.defaults.longitude, self.config.defaults.latitude]),
-		    zoom: self.config.defaults.zoom
-		})
-	    });
-	    
-	    return(self);
-	},
-	
-	Viewport: function(options) {
-	    var self = this;
-
-	    return(self);
-	},
-
-	Layer: function(options) {
-	    var self = this;
-
-	    return(self);
-	},
-
-	Plugin: function(options) {
-	    var self = this;
-
-	    return(self);
-	}
+    this.leafletMap = L.map('root', {
+		center: new L.LatLng(self.opts.defaults.lat, self.opts.defaults.lon),
+		zoom: self.opts.defaults.zoom,
+		zoomControl: true,
+		zoomsliderControl: true,
+		minZoom: self.opts.defaults.minZoom,
+		maxZoom: self.opts.defaults.maxZoom
+    });
+    
+    for(serviceIndex in rasterLayers) {
+    	$.get(rasterLayers[serviceIndex], function(layers) {
+    		for(layerIndex in layers) {
+    			L.tileLayer(layers[layerIndex].url, {
+    				attribution: layers[layerIndex].attribution,
+    				maxZoom: self.opts.defaults.maxZoom
+    			}).addTo(self.leafletMap);
+    		}    	
+    	});
     }
+    
+    
+    
+    return self;
 }
 
+function __giLayer(tagOpts)
+{
+    this.opts = tagOpts || {};
+    self = this;
+
+    return self;
+}
+
+function __giViewport(tagOpts)
+{
+    this.opts = tagOpts || {};
+    self = this;
+
+    return self;
+}
+
+function __giStatus(tagOpts)
+{
+    this.opts = tagOpts || {};
+    self = this;
+
+    return self;
+}
+
+function __giPlugin(tagOpts)
+{
+    this.opts = tagOpts || {};
+    self = this;
+
+    return self;
+}
+
+var geodigraph = {
+    gis: {
+	Map: __giMap,
+	Layer: __giLayer,
+	Viewport: __giViewport,
+	Plugin: __giPlugin
+    }
+};
