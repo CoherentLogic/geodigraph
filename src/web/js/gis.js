@@ -77,9 +77,9 @@ function __giPlugin(tagOpts)
 
 var geodigraph = {
     gis: {
-	Map: __giMap,
-	Layer: __giLayer,
-	Viewport: __giViewport,
-	Plugin: __giPlugin
+    	Map: __giMap,
+    	Layer: __giLayer,
+    	Viewport: __giViewport,
+    	Plugin: __giPlugin
     }
 };
