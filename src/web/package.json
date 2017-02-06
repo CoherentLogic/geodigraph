@@ -2,7 +2,7 @@
     "name": "gis2017",
     "version": "0.1.0",
     "description": "Geodigraph GIS 2017",
-    "main": "app.js",
+    "main": "server/app.js",
     "repository": "https://github.com/CoherentLogic/geodigraph/geodigraph.git",
     "scripts": {
 	"start": "node .",
