@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+	<title>GIS 2017</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.7/semantic.min.css">
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css">
+	<link rel="stylesheet" href="css/app.css">    
+    </head>
+    <body>
+	<header>
+	    <div class="ui top attached menu">
+		
+		<a class="ui dropdown icon item" onclick="app.toggleSidebar();">
+		    <i class="content icon"></i>
+		</a>
+		<div class="item">
+		    GIS 2017
+		</div>
+		
+		<div class="right menu">
+		    <div class="ui right aligned category search item">
+			<div class="ui transparent icon input">
+			    <input class="prompt" type="text" placeholder="Search features...">
+			    <i class="search link icon"></i>
+			</div>
+			<div class="results"></div>
+		    </div>
+		</div>
+		
+	    </div>
+	</header>
+	
+	
+	<div class="ui sidebar vertical menu">
+	    <div class="item">
+		<a class="ui logo icon image">
+		    <img src="/images/geodigraph_icon.png">
+		</a>
+		<a><b>Geodigraph GIS 2017</b></a>
+	    </div>
+	    
+	    <a class="item" href="/login">
+		<i class="sign in icon"></i>Sign In
+	    </a>
+	    <div class="item">
+		Layers <i class="server icon"></i>
+		<div class="menu">
+		    <div class="item">
+			<div class="ui toggle checkbox">
+			    <input type="checkbox" checked="">
+			    <label>Layer 1</label>
+			</div>
+		    </div>
+		    <div class="item">
+			<div class="ui toggle checkbox">
+			    <input type="checkbox">
+			    <label>Layer 2</label>
+			</div>
+		    </div>		    
+
+		</div>
+	    </div>
+	</div>
+	<div id="root" class="pusher"></div>
+	
+	<script src="https://use.fontawesome.com/cb9fc22525.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+	<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.7/semantic.min.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/gis.js"></script>
+	<script>
+	    $(document).ready(app.init);
+	</script>
+    </body>
+</html>

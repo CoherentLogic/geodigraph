@@ -1,0 +1,26 @@
+/*
+ * Geodigraph GIS 2017
+ *
+ * Copyright (C) 2017 Coherent Logic Development LLC
+ * 
+ * Author: John P. Willis <jpw@coherent-logic.com>
+ *
+ * app.css: CSS rules
+ *
+ */
+
+html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+}
+
+#root {
+    flex: 2;
+}
+
+footer {
+    min-height: 40px;
+}
