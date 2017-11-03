@@ -1,6 +1,6 @@
 {
     "name": "gis2017",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Geodigraph GIS 2017",
     "main": "app.js",
     "repository": "https://github.com/CoherentLogic/geodigraph/geodigraph.git",
